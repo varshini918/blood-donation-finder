@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Link - Blood Donation Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🩸 Live Link</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#search">Find Donor</a>
+      <a href="#register">Register</a>
+      <a href="#request">Emergency</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Blood Donation Finder</h1>
+      <p>Find available blood donors quickly by blood group and location during emergencies.</p>
+      <a href="#search" class="btn">Find Blood Donor</a>
+      <a href="#register" class="btn secondary">Become a Donor</a>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card"><h3>Fast Search</h3><p>Search donors by blood group and city.</p></div>
+    <div class="card"><h3>Emergency Request</h3><p>Submit urgent blood requests easily.</p></div>
+    <div class="card"><h3>Admin Control</h3><p>Manage donors and blood requests.</p></div>
+  </section>
+
+  <section id="search" class="section">
+    <h2>Search Blood Donors</h2>
+    <div class="form-row">
+      <select id="searchBlood">
+        <option value="">Select Blood Group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+      </select>
+      <input id="searchCity" placeholder="Enter city" />
+      <button onclick="searchDonors()">Search</button>
+    </div>
+    <div id="donorResults" class="result-grid"></div>
+  </section>
+
+  <section id="register" class="section red-light">
+    <h2>Donor Registration</h2>
+    <form id="registerForm" class="form-card">
+      <input name="name" placeholder="Full Name" required />
+      <input name="email" type="email" placeholder="Email" required />
+      <input name="phone" placeholder="Phone Number" required />
+      <input name="password" type="password" placeholder="Password" required />
+      <select name="blood_group" required>
+        <option value="">Blood Group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+      </select>
+      <input name="city" placeholder="City" required />
+      <textarea name="address" placeholder="Address"></textarea>
+      <button type="submit">Register as Donor</button>
+      <p id="registerMsg"></p>
+    </form>
+  </section>
+
+  <section id="request" class="section">
+    <h2>Emergency Blood Request</h2>
+    <form id="requestForm" class="form-card">
+      <input name="patient_name" placeholder="Patient Name" required />
+      <select name="blood_group" required>
+        <option value="">Required Blood Group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+      </select>
+      <input name="city" placeholder="City" required />
+      <input name="hospital" placeholder="Hospital Name" required />
+      <input name="contact" placeholder="Contact Number" required />
+      <textarea name="message" placeholder="Additional Message"></textarea>
+      <button type="submit">Send Request</button>
+      <p id="requestMsg"></p>
+    </form>
+  </section>
+
+  <footer>© 2026 Live Link - Blood Donation Finder</footer>
+  <script src="script.js"></script>
+</body>
+</html>
